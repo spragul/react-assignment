@@ -78,16 +78,17 @@ function Game() {
         }
       }
       setList(arr);
-    }, 2000);
+    }, 1000);
     setTimeout(()=>{
       clearInterval(stop)
-  },5000)
+  },60000)
   }
     const handleClick = () => {
     setScore(score + 1);
   };
 
-  return (
+  return (<>
+  <Topbar/>
     <div className="game">
       <h1>Game</h1>
       <button onClick={()=>starts()}>Start</button>
@@ -97,8 +98,8 @@ function Game() {
           <p key={index} className="boxs" onClick={handleClick}>{val}</p>
         ))}
       </div>
-      
     </div>
+    </>
   );
 }
 export default Game;

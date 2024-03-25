@@ -111,23 +111,7 @@ font-size: xx-large;
   height: 350px;
 }
 /*scroll-end*/
-.gamontainer{
-  text-align: center;
-  margin-top: 50px;
-  border: 2px solid green;
-}
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  position: absolute;
-  border: 2px solid red;
-}
+/*game start*/
 
 .score {
   font-size: 24px;
@@ -136,22 +120,24 @@ font-size: xx-large;
 .game{
   width:auto;
   height: 80vh;
+  text-align: center;
+  margin-top: 51px;
 }
 .game-container{
 display: flex;
 flex-direction: row;
-width: 300px;
-height: 300px;
+width: 900px;
+height: 200px;
+justify-content: center;
 }
-/* .boxs{
 
-  width: 100px;
-  height: 100px;
-} */
-.boxs {
+.boxs{
   border: 2px solid red;
-  width: 100px;
+  width: 200px;
   height: 100px;
+  margin-top: 35px;
+  text-align: center;
+
 
 }
-
+/*game end*/
