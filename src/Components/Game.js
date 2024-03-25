@@ -84,8 +84,12 @@ function Game() {
       clearInterval(stop);
     }, 60000);
   }
-  const handleClick = () => {
-    setScore(score + 1);
+  const handleClick = (val) => {
+    if (val == "") {
+      setScore(score - 2.5);
+    } else {
+      setScore(score + 5);
+    }
   };
 
   return (
@@ -103,7 +107,7 @@ function Game() {
               style={{
                 backgroundColor: `${val == "Click" ? "green" : ""}`,
               }}
-              onClick={handleClick}
+              onClick={()=>handleClick(val)}
             >
               {val}
             </p>

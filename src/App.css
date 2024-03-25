@@ -124,17 +124,16 @@ font-size: xx-large;
   margin-top: 51px;
 }
 .game-container{
-display: flex;
-flex-direction: row;
-width: 900px;
-height: 200px;
-justify-content: center;
+display: grid;
+grid-template-columns: 10% 10% 10%;
+align-items: center;
 }
+
 
 .boxs{
   border: 2px solid red;
-  width: 200px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   margin-top: 35px;
   text-align: center;
 
