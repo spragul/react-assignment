@@ -55,13 +55,14 @@
 
 import React, { useEffect, useState } from "react";
 import Topbar from "./Topbar";
+import { click } from "@testing-library/user-event/dist/click";
 
 function Game() {
   const [score, setScore] = useState(0);
   const [list, setList] = useState([]);
 
   function starts() {
-   const stop= setInterval(() => {
+    const stop = setInterval(() => {
       // Function to generate random number
       function randomNumber(min, max) {
         min = Math.ceil(min);
@@ -79,26 +80,36 @@ function Game() {
       }
       setList(arr);
     }, 1000);
-    setTimeout(()=>{
-      clearInterval(stop)
-  },60000)
+    setTimeout(() => {
+      clearInterval(stop);
+    }, 60000);
   }
-    const handleClick = () => {
+  const handleClick = () => {
     setScore(score + 1);
   };
 
-  return (<>
-  <Topbar/>
-    <div className="game">
-      <h1>Game</h1>
-      <button onClick={()=>starts()}>Start</button>
-      <h1>Score:{score}</h1>
-      <div className="game-container">
-        {list.map((val, index) => (
-          <p key={index} className="boxs" onClick={handleClick}>{val}</p>
-        ))}
+  return (
+    <>
+      <Topbar />
+      <div className="game">
+        <h1>Game</h1>
+        <button onClick={() => starts()}>Start</button>
+        <h1>Score:{score}</h1>
+        <div className="game-container">
+          {list.map((val, index) => (
+            <p
+              key={index}
+              className="boxs"
+              style={{
+                backgroundColor: `${val == "Click" ? "green" : ""}`,
+              }}
+              onClick={handleClick}
+            >
+              {val}
+            </p>
+          ))}
+        </div>
       </div>
-    </div>
     </>
   );
 }
